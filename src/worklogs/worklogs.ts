@@ -53,7 +53,7 @@ export default {
         }
         const issueKey = await aliases.getIssueKey(input.issueKeyOrAlias) ?? input.issueKeyOrAlias
         const worklogEntity = await api.addWorklog({
-            issueKey: issueKey,
+            issueId: issueKey,
             timeSpentSeconds: parseResult.seconds,
             startDate: format(referenceDate, DATE_FORMAT),
             startTime: startTime(parseResult, input.startTime, referenceDate),
@@ -121,7 +121,7 @@ function toWorklog(entity: WorklogEntity) {
     return {
         id: entity.tempoWorklogId,
         interval: timeParser.toInterval(entity.timeSpentSeconds, entity.startTime, referenceDate) ?? undefined,
-        issueKey: entity.issue.key,
+        issueKey: entity.issue.id,
         duration: timeParser.toDuration(entity.timeSpentSeconds) ?? 'unknown',
         description: entity.description,
         link: generateLink(entity.issue)
@@ -175,5 +175,5 @@ function parseStartTime(startTime: string, referenceDate: Date): string {
 
 function generateLink(issue: IssueEntity): string {
     const url = new URL(issue.self)
-    return `https://${url.hostname}/browse/${issue.key}`
+    return `https://${url.hostname}/browse/${issue.id}`
 }

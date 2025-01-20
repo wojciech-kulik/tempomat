@@ -27,7 +27,7 @@ function authenticate() {
 }
 
 function mockWorklogResponse(
-    returnValue: any = { issue: { key: 'ABC-123', self: 'https://example.atlassian.net/rest/api/2/issue/ABC-123' } }
+    returnValue: any = { issue: { id: 'ABC-123', self: 'https://example.atlassian.net/rest/api/2/issue/ABC-123' } }
 ): jest.Mock<any, any> {
     const addWorklogMock = jest.fn().mockReturnValue(returnValue)
     api.addWorklog = addWorklogMock
@@ -495,10 +495,10 @@ describe('tracker', () => {
         await clearStore()
         authenticate()
         api.addWorklog = jest.fn()
-            .mockReturnValueOnce({ issue: { key: 'ABC-123', self: 'https://example.atlassian.net/rest/api/2/issue/ABC-123' } })
+            .mockReturnValueOnce({ issue: { id: 'ABC-123', self: 'https://example.atlassian.net/rest/api/2/issue/ABC-123' } })
             .mockRejectedValueOnce(new Error('Failed to upload worklog!'))
             .mockRejectedValueOnce(new Error('Failed to upload worklog!'))
-            .mockReturnValueOnce({ issue: { key: 'ABC-123', self: 'https://example.atlassian.net/rest/api/2/issue/ABC-123' } })
+            .mockReturnValueOnce({ issue: { id: 'ABC-123', self: 'https://example.atlassian.net/rest/api/2/issue/ABC-123' } })
 
         await tempo.startTracker({
             issueKeyOrAlias: 'ABC-123',

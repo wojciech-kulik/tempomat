@@ -172,7 +172,7 @@ describe('get user worklogs', () => {
                 tempoWorklogId: '123',
                 issue: {
                     self: 'https://example.atlassian.net/rest/api/2/issue/ABC-123',
-                    key: 'ABC-123'
+                    id: 'ABC-123'
                 },
                 timeSpentSeconds: 900,
                 startDate: '2020-02-28',
@@ -186,7 +186,7 @@ describe('get user worklogs', () => {
                 tempoWorklogId: '123',
                 issue: {
                     self: 'https://example.atlassian.net/rest/api/2/issue/ABC-123',
-                    key: 'ABC-123'
+                    id: 'ABC-123'
                 },
                 timeSpentSeconds: 900,
                 startDate: '2020-02-28',
@@ -200,7 +200,7 @@ describe('get user worklogs', () => {
                 tempoWorklogId: '124',
                 issue: {
                     self: 'https://example.atlassian.net/rest/api/2/issue/ABC-124',
-                    key: 'ABC-124'
+                    id: 'ABC-124'
                 },
                 timeSpentSeconds: 7200,
                 startDate: '2020-02-28',
@@ -214,7 +214,7 @@ describe('get user worklogs', () => {
                 tempoWorklogId: '125',
                 issue: {
                     self: 'https://example.atlassian.net/rest/api/2/issue/ABC-125',
-                    key: 'ABC-125'
+                    id: 'ABC-125'
                 },
                 timeSpentSeconds: 7380,
                 startDate: '2020-02-27',
@@ -386,7 +386,7 @@ describe('get user worklogs', () => {
                     tempoWorklogId: '123',
                     issue: {
                         self: 'https://example.atlassian.net/rest/api/2/issue/ABC-123',
-                        key: 'ABC-123'
+                        id: 'ABC-123'
                     },
                     timeSpentSeconds: 21600,
                     startDate: '2020-02-03',
@@ -429,7 +429,7 @@ describe('get user worklogs', () => {
                     tempoWorklogId: '123',
                     issue: {
                         self: 'https://example.atlassian.net/rest/api/2/issue/ABC-123',
-                        key: 'ABC-123'
+                        id: 'ABC-123'
                     },
                     timeSpentSeconds: 21600,
                     startDate: '2020-02-03',

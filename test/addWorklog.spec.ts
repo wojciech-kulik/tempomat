@@ -18,7 +18,7 @@ authenticator.saveCredentials({
 
 describe('adds a worklog', () => {
     const addWorklogMock = jest.fn()
-        .mockReturnValue({ issue: { key: 'ABC-123', self: 'https://example.atlassian.net/rest/api/2/issue/ABC-123' } })
+        .mockReturnValue({ issue: { id: 'ABC-123', self: 'https://example.atlassian.net/rest/api/2/issue/ABC-123' } })
     api.addWorklog = addWorklogMock
     api.getUserSchedule = jest.fn()
 

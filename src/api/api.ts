@@ -5,7 +5,7 @@ import flags from '../globalFlags'
 import { appName } from '../appName'
 
 export type AddWorklogRequest = {
-    issueKey: string;
+    issueId: string;
     timeSpentSeconds: number;
     startDate: string;
     startTime: string;
@@ -53,7 +53,7 @@ export type AuthorEntity = {
 
 export type IssueEntity = {
     self: string;
-    key: string;
+    id: string;
 }
 
 export default {

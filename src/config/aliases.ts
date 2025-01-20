@@ -11,7 +11,7 @@ export default {
         const config = await configStore.read()
         if (!config.aliases) return []
         const entries = Array.from(config.aliases.entries()).filter(entry => {
-            return entry[1].toUpperCase() === issueKey.toUpperCase()
+            return entry[1] == issueKey
         })
         const aliases = entries.map(value => value[0])
         return aliases

@@ -20,7 +20,7 @@ test('deletes a worklog', async () => {
             tempoWorklogId: '123',
             issue: {
                 self: 'https://example.atlassian.net/rest/api/2/issue/ABC-123',
-                key: 'ABC-123'
+                id: 'ABC-123'
             },
             timeSpentSeconds: 900,
             startDate: '2020-02-28',
